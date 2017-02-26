@@ -120,6 +120,7 @@ because its verbose name has changed:
     ]
 
 Changing the language code back to `en` and running `makemigrations` again will
-create another migration.
+create another migration (this has not been added to the git repo, so you can try 
+it on your own).
 
-Chaning the language code should definitely not cause new migrations to be created.
+Changing the language code should definitely not cause new migrations to be created.
