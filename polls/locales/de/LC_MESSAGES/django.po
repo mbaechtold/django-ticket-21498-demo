@@ -20,4 +20,4 @@ msgstr ""
 
 #: models.py:6
 msgid "date published"
-msgstr ""
+msgstr "Veröffentlichungsdatum"
