@@ -1,9 +1,9 @@
 from django.db import models
-
+from django.utils.translation import ugettext as _
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField(_('date published'))
 
 
 class Choice(models.Model):

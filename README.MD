@@ -61,29 +61,20 @@ Note how the field `pub_date` gets a verbose name (*date published*) in the migr
     ),
     ...
     
-Configure `LANGUAGES` and  `LOCALES`:
+Configure `LOCALE_PATHS` and `LANGUAGES`:
 
     LOCALE_PATHS = [
-        os.path.join(BASE_DIR, 'locales'),
+        os.path.join(BASE_DIR, 'polls', 'locales'),
     ]
 
     LANGUAGES = (
         ('en', 'English'),
         ('de', 'German'),
     )
-    
-Create the folders which will hold the translations:
-
-    .
-    ├── example
-    ├── locales    <-- Create this folder
-    │   ├── de     <-- Create this folder
-    │   └── en     <-- Create this folder
-    └── polls
 
 Please note that `LANGUAGE_CODE` still has the value from when the project has been generated:
     
-    LANGUAGE_CODE = 'en'
+    LANGUAGE_CODE = 'en-us'
     
 Mark the field's verbose name for translation:
 
@@ -93,9 +84,11 @@ Mark the field's verbose name for translation:
         ...
         pub_date = models.DateTimeField(_('date published'))
        
-Generate the translation files:
+Generate the translation files for our `polls` app:
 
-    python manage.py makemessages --all
+    cd polls
+    python ../manage.py makemessages -l de -l en
+    cd ..
     
 Add the German translation (e.g. "Veröffentlichungsdatum")for the field's verbose name in the 
 file `locales/de/LC_MESSAGES/django.po` and compile the translations:

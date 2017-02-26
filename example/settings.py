@@ -107,6 +107,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+LOCALE_PATHS = [
+        os.path.join(BASE_DIR, 'polls', 'locales'),
+    ]
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('de', 'German'),
+)
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
